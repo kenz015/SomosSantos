@@ -8,7 +8,7 @@ Conheça a história do clube que mostrou ao mundo o que é jogar bonito, Santos
 | --- | --- |
 | **Início** (`index.html`) | "hall de entrada" do site, a evolução dos escudos do clube e o hino |
 | **Vila Belmiro** (`vila-belmiro.html`) | A história do Estádio Urbano Caldeira, o apelido "Alçapão" e curiosidades |
-| **Pelé** (`pele.html`) | Uma homenagem pessoal ao eterno rei Pelé |
+| **Pelé** (`pele.html`) | Uma homenagem ao eterno rei Pelé |
 | **História** (`historia.html`) | Fundação, Década de Ouro e a identidade do clube |
 | **Ídolos** (`idolos.html`) | Cards com dez ídolos históricos: posição, jogos, gols e títulos |
 
@@ -33,9 +33,9 @@ Conheça a história do clube que mostrou ao mundo o que é jogar bonito, Santos
     └── idolos/
 ```
 
-## Como abrir
+## Acesso ao projeto
 
-Baixe o repositório e abra o `index.html` no navegador. No VS Code, a extensão **Live Server** atualiza a página sozinha a cada alteração.
+https://kenz015.github.io/SomosSantos/
 
 ## Créditos
 
