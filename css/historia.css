@@ -1,0 +1,75 @@
+.pagina-historia {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url('../img/sala-trofeus.jpg') center / cover no-repeat fixed;
+}
+
+.historia {
+  width: min(1050px, 100% - 32px);
+  margin: calc(var(--altura-topo) + 40px) auto 80px;
+}
+
+.historia__titulo {
+  padding: 4px 20px;
+  font-size: 56px;
+}
+
+/* ===== Texto em duas colunas ===== */
+.historia__texto {
+  columns: 2;
+  column-gap: 40px;
+  margin: 60px 0;
+  font-size: 18px;
+}
+
+.historia__texto p {
+  margin-bottom: 18px;
+}
+
+.historia__ficha {
+  font-style: italic;
+}
+
+.historia__texto ul {
+  margin: 0 0 18px 20px;
+  font-style: italic;
+  break-inside: avoid;
+}
+
+.historia__virada {
+  break-before: column;
+}
+
+/* ===== Identidade ===== */
+.historia__identidade h2 {
+  margin-bottom: 30px;
+  font-size: 64px;
+  color: var(--amarelo);
+  text-align: center;
+}
+
+.historia__identidade p {
+  padding: 16px;
+  border: 1px solid var(--amarelo);
+  font-size: 18px;
+}
+
+/* ===================== Responsivo ===================== */
+
+@media (max-width: 900px) {
+  .historia__titulo {
+    font-size: 40px;
+  }
+
+  .historia__texto {
+    columns: 1;
+  }
+
+  .historia__virada {
+    break-before: auto;
+  }
+
+  .historia__identidade h2 {
+    font-size: 44px;
+  }
+}

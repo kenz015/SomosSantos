@@ -1,0 +1,331 @@
+/* ===== Variáveis ===== */
+:root {
+  --amarelo: #ffea00;
+  --amarelo-escuro: #d4af37;
+  --preto: #000;
+  --branco: #fff;
+  --cinza-claro: #e5e5e5;
+  --amarelo-rodape: #9a7d00;
+
+  --fonte-texto: 'Inter', sans-serif;
+  --fonte-mao: 'Caveat', cursive;
+
+  --altura-topo: 111px;
+  --altura-rodape: 104px;
+}
+
+/* ===== Reset ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fonte-texto);
+  line-height: 1.4;
+  background: var(--preto);
+  color: var(--branco);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  padding-left: 1.4em;
+}
+
+/* ===== Classes comuns ===== */
+.destaque {
+  color: var(--amarelo);
+}
+
+.titulo-mao {
+  font-family: var(--fonte-mao);
+  font-weight: 400;
+}
+
+.titulo-fino {
+  font-weight: 100;
+}
+
+.caixa-titulo {
+  width: fit-content;
+  margin-inline: auto;
+  padding: 8px 20px;
+  border: 1px solid var(--amarelo);
+  text-align: center;
+}
+
+/* ===== Header ===== */
+.topo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: var(--altura-topo);
+  padding: 0 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+}
+
+.topo__logo {
+  margin-right: 13px;
+}
+
+.topo__nav,
+.topo__redes {
+  height: 74px;
+  padding-left: 40px;
+  border-left: 1px solid var(--branco);
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.topo__logo img {
+  width: 92px;
+  height: 92px;
+  border: 1px solid var(--branco);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.topo__nav img,
+.topo__redes img {
+  width: 70px;
+  height: 70px;
+  transition: transform 0.2s;
+}
+
+.topo a:hover img {
+  transform: scale(1.1);
+}
+
+.topo__texto {
+  width: max-content;
+  font-size: 15px;
+  font-weight: 100;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.topo__texto .destaque {
+  display: block;
+}
+
+/* ===== Variações do header ===== */
+
+/* Claro: páginas de fundo claro */
+.topo--claro {
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--preto);
+}
+
+.topo--claro .topo__nav,
+.topo--claro .topo__redes {
+  border-left-color: var(--preto);
+}
+
+.topo--claro .topo__nav img,
+.topo--claro .topo__redes img {
+  filter: invert(1);
+}
+
+.topo--claro .topo__logo img {
+  border-color: var(--preto);
+}
+
+.topo--claro .destaque {
+  color: var(--amarelo-escuro);
+}
+
+.topo--claro .topo__texto {
+  font-weight: 300;
+}
+
+/* ===== Rodapé ===== */
+.rodape {
+  height: var(--altura-rodape);
+  padding: 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--branco);
+  font-size: 30px;
+  font-weight: 300;
+  backdrop-filter: blur(3px);
+}
+
+.rodape__credito {
+  padding-right: 36px;
+  border-right: 1px solid var(--branco);
+}
+
+.rodape__credito .destaque {
+  font-style: italic;
+}
+
+.rodape__socio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rodape__socio img {
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--amarelo);
+}
+
+/* Variação clara: páginas de fundo claro */
+.rodape--claro {
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--preto);
+}
+
+.rodape--claro .rodape__credito {
+  border-right-color: var(--preto);
+}
+
+.rodape--claro .destaque {
+  color: var(--amarelo-rodape);
+}
+
+.rodape--claro .rodape__socio img {
+  border-color: var(--amarelo-rodape);
+}
+
+.rodape__credito:only-child {
+  padding-right: 0;
+  border-right: none;
+}
+
+/* Sobreposto: sobe para cima da última seção */
+.rodape--sobreposto {
+  position: relative;
+  margin-top: calc(-1 * var(--altura-rodape));
+}
+
+/* ===================== Responsivo ===================== */
+
+/* Notebooks (1366px, 1280px): header todo ainda em uma linha */
+@media (max-width: 1460px) {
+  .topo__nav,
+  .topo__redes {
+    gap: 24px;
+  }
+
+  .topo__nav img,
+  .topo__redes img {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* Tablets: os textos do header saem, os ícones diminuem */
+@media (max-width: 1100px) {
+  .topo {
+    padding: 0 24px;
+    gap: 20px;
+  }
+
+  .topo__logo {
+    margin-right: 0;
+  }
+
+  .topo__nav,
+  .topo__redes {
+    gap: 16px;
+    padding-left: 20px;
+  }
+
+  .topo__nav img,
+  .topo__redes img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .topo__texto {
+    display: none;
+  }
+
+  .rodape {
+    gap: 24px;
+    font-size: 24px;
+  }
+
+  .rodape__credito {
+    padding-right: 24px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  :root {
+    --altura-topo: 64px;
+    --altura-rodape: 150px;
+  }
+
+  .topo {
+    padding: 0 12px;
+    gap: 10px;
+  }
+
+  .topo__logo img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .topo__nav,
+  .topo__redes {
+    height: 40px;
+    gap: 6px;
+    padding-left: 10px;
+  }
+
+  .topo__nav img,
+  .topo__redes img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .rodape {
+    height: auto;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px 16px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .rodape--sobreposto {
+    height: var(--altura-rodape);
+  }
+
+  .rodape__credito {
+    padding-right: 0;
+    border-right: none;
+  }
+
+  .rodape__socio img {
+    width: 48px;
+    height: 48px;
+  }
+}
+

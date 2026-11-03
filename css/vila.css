@@ -1,0 +1,87 @@
+.pagina-vila {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+    url('../img/vila-belmiro.jpg') center / cover no-repeat fixed;
+  color: var(--preto);
+}
+
+.vila {
+  width: min(1200px, 100% - 32px);
+  margin: calc(var(--altura-topo) + 40px) auto 60px;
+  padding: 30px 130px 80px;
+  border: 1px solid var(--amarelo);
+}
+
+.vila__titulo {
+  margin-bottom: 50px;
+  padding: 0 20px 4px;
+}
+
+.vila__titulo h1 {
+  font-size: 64px;
+  line-height: 1;
+}
+
+.vila__titulo p {
+  font-size: 36px;
+}
+
+.vila__colunas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 90px;
+  font-size: 18px;
+}
+
+.vila h2 {
+  margin: 24px 0 16px;
+  font-size: 32px;
+  text-align: center;
+}
+
+/* Estatísticas: "Rótulo: valor" na mesma linha */
+.vila dl {
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.vila dt {
+  display: inline;
+  font-weight: 700;
+}
+
+.vila dt::after {
+  content: ': ';
+}
+
+.vila dd {
+  display: inline;
+}
+
+.vila dd::after {
+  content: '';
+  display: block;
+}
+
+.vila ul {
+  font-style: italic;
+}
+/* ===================== Responsivo ===================== */
+
+@media (max-width: 900px) {
+  .vila {
+    padding: 24px 16px 40px;
+  }
+
+  .vila__colunas {
+    grid-template-columns: 1fr;
+  }
+
+  .vila__titulo h1 {
+    font-size: 48px;
+  }
+
+  .vila__titulo p {
+    font-size: 24px;
+  }
+}

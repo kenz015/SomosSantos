@@ -1,0 +1,159 @@
+.hero {
+  min-height: 100vh;
+  padding: var(--altura-topo) 97px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: url('../img/pele-hero.jpg') center / cover no-repeat;
+}
+
+.hero h1 {
+  font-family: var(--fonte-mao);
+  font-weight: 400;
+  font-size: 50px;
+}
+
+.hero__link {
+  position: relative;
+}
+
+.hero__link::before {
+  content: '';
+  position: absolute;
+  bottom: 60%;
+  left: 50%;
+  width: 36px;
+  height: 36px;
+  background: url('../img/icones/coroa-amarela.svg') center / contain no-repeat;
+  opacity: 0;
+  transform: translate(calc(-50% + 5px), 8px);
+  transition: opacity 0.2s, transform 0.2s;
+  pointer-events: none;
+}
+
+.hero__link:hover::before {
+  opacity: 1;
+  transform: translate(calc(-50% + 5px), 0);
+}
+
+.escudos {
+  padding: 90px 108px 100px;
+  text-align: center;
+}
+
+.escudos h2 {
+  margin-bottom: 70px;
+  font-size: 50px;
+  font-weight: 100;
+  color: var(--amarelo);
+}
+
+.escudos__grade {
+  display: grid;
+  grid-template-columns: repeat(5, 200px);
+  justify-content: space-between;
+}
+
+.escudos img {
+  width: 200px;
+  height: 192px;
+  object-fit: cover;
+  border: 1px solid var(--amarelo);
+}
+
+.escudos figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.escudos figure:hover {
+  transform: scale(1.08);
+}
+
+.escudos figcaption {
+  margin-top: 4px;
+  font-size: 45px;
+  font-weight: 100;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.escudos figure:hover figcaption {
+  color: var(--amarelo);
+}
+
+.hino {
+  min-height: 100vh;
+  padding: 90px 180px calc(90px + var(--altura-rodape)) 207px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background: url('../img/hino-fundo.jpg') center / cover no-repeat;
+}
+
+.hino h2 {
+  font-family: var(--fonte-mao);
+  font-weight: 400;
+  font-size: 80px;
+  color: var(--amarelo);
+}
+
+.hino__letra {
+  font-family: var(--fonte-mao);
+  font-size: 20px;
+  line-height: 1.25;
+  text-align: center;
+  white-space: pre-line;
+}
+
+/* ===================== Responsivo ===================== */
+
+@media (max-width: 900px) {
+  .hero {
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 16px 60px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .escudos {
+    padding: 60px 16px;
+  }
+
+  .escudos h2 {
+    margin-bottom: 40px;
+    font-size: 36px;
+  }
+
+  .escudos__grade {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    justify-items: center;
+    gap: 32px 16px;
+  }
+
+  .escudos img {
+    width: 140px;
+    height: 134px;
+  }
+
+  .escudos figcaption {
+    font-size: 28px;
+  }
+
+  .hino {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 60px 16px calc(60px + var(--altura-rodape));
+    text-align: center;
+  }
+
+  .hino h2 {
+    font-size: 56px;
+  }
+}
